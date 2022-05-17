@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodx/greeting.dart';
 
 class topSection extends StatelessWidget {
   const topSection({Key? key}) : super(key: key);
@@ -30,15 +31,23 @@ class topSection extends StatelessWidget {
                   )
                 ],
               ),
-              Container(
-                padding: EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                    color: Color(0xffFAF4E5),
-                    borderRadius: BorderRadius.circular(10)),
-                child: const Image(
-                  image: AssetImage('assets/icon/filter.png'),
-                  height: 26,
-                  width: 26,
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => greetingScreem()));
+                },
+                child: Container(
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                      color: Color(0xffFAF4E5),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: const Image(
+                    image: AssetImage('assets/icon/filter.png'),
+                    height: 26,
+                    width: 26,
+                  ),
                 ),
               ),
             ],
@@ -98,7 +107,7 @@ class topSection extends StatelessWidget {
                     ),
                     const SizedBox(width: 20),
                     const Text(
-                      'Search your fav food',
+                      'Search your fav foods',
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
